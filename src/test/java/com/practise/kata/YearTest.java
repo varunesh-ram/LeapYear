@@ -29,4 +29,16 @@ public class YearTest {
         year.setYear(2004);
         Assert.assertTrue(year.isLeapYear());
     }
+
+    @Test(expected = Year.InvalidData.class)
+    public void year0000ShouldThrowInvalidData() {
+        year.setYear(0000);
+    }
+
+    @Test(expected = Year.InvalidData.class)
+    public void negativeValueShouldThrowInvalidData() {
+        year.setYear(-5);
+    }
+
+
 }

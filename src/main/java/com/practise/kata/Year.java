@@ -18,7 +18,7 @@ public class Year {
     }
 
     public void setYear(int year) throws InvalidData {
-        if (year == 0)
+        if (year <= 0)
             throw new InvalidData();
         this.year = year;
     }
