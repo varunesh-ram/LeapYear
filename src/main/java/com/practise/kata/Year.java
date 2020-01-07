@@ -5,13 +5,13 @@ public class Year {
 
     public boolean isLeapYear() {
         if (isYearNotDivisbleBy400()) {
-            return !isYearNotDivisbleBy4();
+            return isYearDivisbleBy4();
         }
         return true;
     }
 
-    private boolean isYearNotDivisbleBy4() {
-        return year % 4 != 0;
+    private boolean isYearDivisbleBy4() {
+        return year % 4 == 0;
     }
 
     private boolean isYearNotDivisbleBy400() {
