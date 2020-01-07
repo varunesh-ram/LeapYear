@@ -14,16 +14,19 @@ public class YearTest {
 
     @Test
     public void year2019ShouldNotBeLeapYear() {
-        Assert.assertFalse(year.isLeapYear(2019));
+        year.setYear(2019);
+        Assert.assertFalse(year.isLeapYear());
     }
 
     @Test
     public void year2000ShouldBeLeapYear() {
-        Assert.assertTrue(year.isLeapYear(2000));
+        year.setYear(2000);
+        Assert.assertTrue(year.isLeapYear());
     }
 
     @Test
     public void year2004ShouldBeLeapYear() {
-        Assert.assertTrue(year.isLeapYear(2004));
+        year.setYear(2004);
+        Assert.assertTrue(year.isLeapYear());
     }
 }
