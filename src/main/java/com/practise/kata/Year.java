@@ -4,13 +4,18 @@ public class Year {
     private int year;
 
     public boolean isLeapYear() {
-        boolean result = true;
-        if (year % 400 != 0) {
-            if (year % 4 != 0) {
-                result = false;
-            }
+        if (isYearNotDivisbleBy400()) {
+            return !isYearNotDivisbleBy4();
         }
-        return result;
+        return true;
+    }
+
+    private boolean isYearNotDivisbleBy4() {
+        return year % 4 != 0;
+    }
+
+    private boolean isYearNotDivisbleBy400() {
+        return year % 400 != 0;
     }
 
     public int getYear() {
@@ -18,9 +23,13 @@ public class Year {
     }
 
     public void setYear(int year) throws InvalidData {
-        if (year <= 0)
+        if (isYearLessThanOrEqualTo0(year))
             throw new InvalidData();
         this.year = year;
+    }
+
+    private boolean isYearLessThanOrEqualTo0(int year) {
+        return year <= 0;
     }
 
     public class InvalidData extends RuntimeException {
