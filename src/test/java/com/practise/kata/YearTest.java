@@ -1,18 +1,19 @@
 package com.practise.kata;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class YearTest {
-    @Test
+    private Year year;
+
+    @Before
     public void shouldInstantiateYear() {
-        Year year = new Year();
-        Assert.assertNotNull(year);
+        year = new Year();
     }
 
     @Test
     public void year2019ShouldNotBeLeapYear() {
-        Year year = new Year();
         Assert.assertFalse(year.isLeapYear(2019));
     }
 }
